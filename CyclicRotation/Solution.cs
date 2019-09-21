@@ -22,6 +22,9 @@ namespace CyclicRotation
         }
        public int[] CounterClockwise(int[] A, int K)
         {
+            if (K <= 0)
+                return A;
+            if (A.Length == 0) return A;
             return A.Skip(K) 
              .Concat(A.Take(K)) 
              .ToArray();
